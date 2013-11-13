@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.phonehalo.itemtracker"
+    android:versionCode="18" >
+
+    <uses-sdk
+        android:maxSdkVersion="18"
+        android:minSdkVersion="14"
+        android:targetSdkVersion="18" />
+
+    <!-- Generally needed for maps and other network services -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <!-- required permission to receive data from the maps API -->
+    <permission
+        android:name="com.phonehalo.itemtracker.permission.MAPS_RECEIVE"
+        android:protectionLevel="signature" />
+
+    <uses-permission android:name="com.phonehalo.itemtracker.permission.MAPS_RECEIVE" />
+    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
+
+    <!-- External storage for caching. -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <!-- My Location -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
+    <!-- Need Bluetooth permissions for BLE -->
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" >
+    </uses-permission>
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" >
+    </uses-permission>
+
+    <!-- Camera permissions/features for making custom device icons -->
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.camera.autofocus"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.camera.flash"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.bluetooth_le"
+        android:required="false" />
+
+    <!-- Permissions for the service to use accounts to get oauth2 tokens to access services like facebook/twitter -->
+    <uses-permission
+        android:name="android.permission.ACCOUNT_MANAGER"
+        tools:ignore="ProtectedPermissions" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.USE_CREDENTIALS" />
+
+    <!--
+    Used for cancelling a bonding operation, needed for the BLE lib,
+    but will not be granted for an app that is not an administrator, so probably useless
+
+    Result? don't try to cancel the bonding process (BluetoothDevice.cancelBondProcess())
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="android.permission.WRITE_SECURE_SETTINGS" />
+    -->
+
+
+    <!-- Maps API needs OpenGL ES 2.0. -->
+    <!-- suppress AndroidDomInspection ... glEsVersion is a version number, not an external resource, so just suppress the error -->
+    <uses-feature
+        android:glEsVersion="0x00020000"
+        android:required="true" />
+
+    <application
+        android:icon="@drawable/icon"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+
+        <!-- Activity List -->
+        <activity
+            android:name="com.phonehalo.itemtracker.activity.MapView"
+            android:label="@string/mapViewLabel"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Holo.Light.NoActionBar" >
+        </activity>
+        <activity
+            android:name=".GetStartedActivity"
+            android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        
+        <activity
+            android:name="com.phonehalo.itemtracker.activity.NavigationActivity"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Holo.Light.NoActionBar" 
+             />
+        
+        <activity
+            android:name="com.phonehalo.itemtracker.activity.ItemSettingsActivity"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Holo.Light"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name="com.phonehalo.itemtracker.activity.AddItemActivity"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Holo.Light.NoActionBar" />
+        <activity
+            android:name="com.phonehalo.itemtracker.activity.ChooseIconActivity"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Holo.Light.NoActionBar" />
+        <activity
+            android:name="com.phonehalo.itemtracker.activity.TwitterAuthActivity"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Holo.Light.NoActionBar" />
+        
+        <activity
+            android:name="com.phonehalo.itemtracker.raawee.registration.RegistrationActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name="com.phonehalo.itemtracker.raawee.registration.DeviceActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.phonehalo.itemtracker.raawee.registration.InstructionActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name="com.phonehalo.itemtracker.raawee.registration.AboutUsActivity"
+            android:screenOrientation="portrait" />
+        
+        
+        <activity
+            android:name="com.facebook.LoginActivity"
+            android:screenOrientation="portrait" />
+
+        <!--
+        Must declare library service here in order to use it.
+        It might be nice if this could be declared in library manifest.
+        It was not possible previously, but maybe that has changed in the latest SDKs.
+        -->
+        <service android:name="com.phonehalo.itemtracker.service.ItemTrackerService" />
+        <service android:name="com.phonehalo.ble.service.PHBleService" />
+        <service android:name="com.phonehalo.ble.samsung.SamsungBleService" />
+        <service android:name="com.phonehalo.ble.samsungtwo.SamsungTwoService" />
+        <service android:name="com.phonehalo.ble.official.OfficialService" />
+
+        <!-- You must insert your own Google Maps for Android API v2 key in here. -->
+        <meta-data
+            android:name="com.google.android.maps.v2.API_KEY"
+            android:value="AIzaSyDHysFPAxshqkN2733G7GgRUZPNcwjZ798" />
+        <!-- James Walsh debug API key AIzaSyCdyl8Otr_RnzkzZzv3OFrFvtB6kE9Eyck -->
+        <meta-data
+            android:name="com.facebook.sdk.ApplicationId"
+            android:value="@string/app_id" />
+
+       
+        <activity
+            android:name="com.phonehalo.itemtracker.MainActivity"
+            android:label="@string/title_activity_main" >
+        </activity>
+        <activity
+            android:name="com.phonehalo.itemtracker.StartingActivity"
+            android:label="@string/title_activity_starting" >
+        </activity>
+    </application>
+
+</manifest>

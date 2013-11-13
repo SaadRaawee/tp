@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              style="@android:style/Theme.Holo.Light"
+        >
+
+    <RelativeLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dip"
+                    android:background="@color/TagColor"
+            >
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="@string/labelSettings"
+                android:textColor="@color/white"
+                android:textSize="20dip"
+                android:textStyle="bold"
+                />
+
+        <Button
+                android:id="@+id/settingsEditButton"
+                android:layout_width="80dip"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:background="@drawable/ic_device_disconnect"
+                android:text="@string/buttonEdit"
+                android:paddingLeft="15dip"
+                android:onClick="onClick"
+                android:textColor="@color/white"
+                android:layout_centerVertical="true"
+                android:layout_margin="10dip"/>
+    </RelativeLayout>
+
+    <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            style="@android:style/Theme.Holo.Light"
+            >
+
+        <LinearLayout
+                android:id="@+id/linearLayoutSettings"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                >
+
+            <!--Device List and discover device button-->
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dip"
+                    android:text="@string/deviceList"
+                    android:textSize="20dip"
+                    />
+
+            <Button
+                    android:id="@+id/buttonDiscoverDevices"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dip"
+                    android:layout_marginBottom="20dp"
+                    android:layout_marginLeft="10dip"
+                    android:layout_marginRight="10dip"
+                    android:text="@string/addInsiteDevice"
+                    android:textStyle="bold"
+                    android:onClick="onClick"
+                    android:drawableRight="@drawable/dot_grey"
+                    />
+
+            <!--Email Notifications controls-->
+            <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    >
+
+
+                <!--Email address **************************************************-->
+
+                <!--Email cc address **************************************************-->
+
+                <!--Email Alerts Toggle-->
+
+                <!--Twitter Notifications Toggle-->
+
+                <!--About-->
+                <TextView
+                        android:id="@+id/labelAbout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dip"
+                        android:layout_marginTop="10dip"
+                        android:text="@string/about"
+                        android:textSize="20dip"
+                        />
+                <!--About AudioVox-->
+                <!--
+                <TextView
+                        android:id="@+id/labelAboutAudiovox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/labelAbout"
+                        android:layout_marginTop="1dip"
+                        android:layout_marginLeft="10dip"
+                        android:layout_marginRight="10dip"
+                        android:padding="10dip"
+                        android:text="@string/aboutAudiovox"
+                        android:textColor="@android:color/black"
+                        android:textStyle="bold"
+                        android:background="@drawable/rectangle_rounded_top_white"
+                        android:clickable="true"
+                        android:onClick="onClick"
+                        />
+
+                <ImageView
+                        android:id="@+id/aboutAudiovoxRightChevron"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignTop="@id/labelAboutAudiovox"
+                        android:layout_alignRight="@id/labelAboutAudiovox"
+                        android:layout_marginTop="10dip"
+                        android:src="@drawable/dot_grey"
+                        />
+                        -->
+                <!--About PhoneHalo-->
+                <TextView
+                        android:id="@+id/labelAboutPhoneHalo"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/labelAbout"
+                        android:layout_marginTop="1dip"
+                        android:layout_marginLeft="10dip"
+                        android:layout_marginRight="10dip"
+                        android:padding="10dip"
+                        android:text="@string/aboutPhoneHalo"
+                        android:textStyle="bold"
+                        android:clickable="true"
+                        android:onClick="onClick"
+                        />
+
+                <ImageView
+                        android:id="@+id/aboutPhoneHaloRightChevron"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignTop="@id/labelAboutPhoneHalo"
+                        android:layout_alignRight="@id/labelAboutPhoneHalo"
+                        android:layout_marginTop="10dip"
+                        />
+                <!--Frequently Asked Questions-->
+                <TextView
+                        android:id="@+id/labelFAQ"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/labelAboutPhoneHalo"
+                        android:layout_marginTop="1dip"
+                        android:layout_marginLeft="10dip"
+                        android:layout_marginRight="10dip"
+                        android:padding="10dip"
+                        android:text="@string/faq"
+                        android:textStyle="bold"
+                        android:clickable="true"
+                        android:onClick="onClick"
+                        />
+
+                <ImageView
+                        android:id="@+id/faqRightChevron"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignTop="@id/labelFAQ"
+                        android:layout_alignRight="@id/labelFAQ"
+                        android:layout_marginTop="10dip"
+                        />
+                <!--Software Version-->
+                <TextView
+                        android:id="@+id/labelSoftwareVersion"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/labelFAQ"
+                        android:layout_marginTop="1dip"
+                        android:layout_marginLeft="10dip"
+                        android:layout_marginRight="10dip"
+                        android:padding="10dip"
+                        android:text="@string/softwareVersion"
+                        android:textStyle="bold"
+                        />
+
+                <TextView
+                        android:id="@+id/valueSoftwareVersion"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/labelFAQ"
+                        android:layout_marginLeft="140dip"
+                        android:layout_marginRight="10dip"
+                        android:padding="10dip"
+                        android:text="@string/softwareVersionValue"
+                        android:textSize="15dip"
+                        />
+
+                <!--Facebook Notifications Toggle-->
+
+                <TextView
+                        android:id="@+id/labelFacebookNotifications"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/labelSoftwareVersion"
+                        android:layout_marginLeft="20dip"
+                        android:layout_marginTop="10dip"
+                        android:text="@string/facebookNotifications"
+                        android:textSize="20dip"
+                        android:visibility="invisible"
+                        />
+
+                <TextView
+                        android:id="@+id/labelFacebookAlert"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/labelFacebookNotifications"
+                        android:layout_marginLeft="10dip"
+                        android:layout_marginRight="10dip"
+                        android:padding="10dip"
+                        android:text="@string/enableFacebookAlerts"
+                        android:textStyle="bold"
+                        android:visibility="invisible"
+                        />
+
+                <ToggleButton
+                        android:id="@+id/toggleFacebookAlertOnOff"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignRight="@id/labelFacebookAlert"
+                        android:layout_alignTop="@id/labelFacebookAlert"
+                        android:layout_alignBottom="@id/labelFacebookAlert"
+                        android:layout_marginRight="10dip"
+                        android:onClick="onClick"
+                        android:visibility="invisible"
+                        />
+
+            </RelativeLayout>
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

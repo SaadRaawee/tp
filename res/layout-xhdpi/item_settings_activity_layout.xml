@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              style="@android:style/Theme.Holo.Light">
+
+    <RelativeLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="50dip"
+            android:visibility="gone"
+            >
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="@string/labelDeviceSettings"
+                android:textSize="20dip"
+                />
+    </RelativeLayout>
+
+    <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            style="@android:style/Theme.Holo.Light"
+            >
+
+        <RelativeLayout
+                android:id="@+id/linearLayoutSettings"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                >
+
+            <TextView
+                    android:id="@+id/labelBasicSettings"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dip"
+                    android:layout_marginTop="10dip"
+                    android:text="@string/basicSettings"
+                    android:textSize="20dip"
+
+                    />
+
+            <!--Device Name Setting **************************************************-->
+            <TextView
+                    android:id="@+id/labelPeripheralName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/labelBasicSettings"
+                    android:layout_marginLeft="10dip"
+                    android:layout_marginRight="10dip"
+                    android:padding="10dip"
+                    android:text="@string/deviceName"
+                    android:textStyle="bold"
+                    />
+
+            <EditText
+                    android:id="@+id/contentPeripheralName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/labelBasicSettings"
+                    android:layout_marginLeft="110dip"
+                    android:layout_marginRight="10dip"
+                    android:padding="10dip"
+                    android:text="testname"
+                    android:textSize="15dip"
+                    android:inputType="textCapWords"
+                    android:cursorVisible="false"
+                    android:onClick="onClick"
+                    />
+
+            <!--Device Image **************************************************-->
+            <TextView
+                    android:id="@+id/labelPeripheralImage"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/labelPeripheralName"
+                    android:layout_marginTop="1dip"
+                    android:layout_marginLeft="10dip"
+                    android:layout_marginRight="10dip"
+                    android:padding="10dip"
+                    android:text="@string/deviceImage"
+                    android:textStyle="bold"
+                    />
+
+            <TextView
+                    android:id="@+id/contentPeripheralIconName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/labelPeripheralName"
+                    android:layout_marginLeft="110dip"
+                    android:layout_marginRight="10dip"
+                    android:padding="10dip"
+                    android:text="testimagetext"
+                    android:textSize="15dip"
+                    />
+
+            <!-- Peripheral Alert Settings **************************************************-->
+            <TextView
+                    android:id="@+id/labelPeripheralAlertSettings"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/labelPeripheralImage"
+                    android:layout_marginLeft="20dip"
+                    android:layout_marginTop="10dip"
+                    android:text="@string/deviceAlertSettings"
+                    android:textSize="20dip"
+                    />
+
+            <TextView
+                    android:id="@+id/labelPeripheralAlertDuration"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/labelPeripheralAlertSettings"
+                    android:layout_marginLeft="10dip"
+                    android:layout_marginRight="10dip"
+                    android:padding="11dip"
+                    android:text="@string/deviceAlert"
+                    android:textStyle="bold"
+                    />
+
+            <SeekBar
+                    android:id="@+id/seekBarPeripheralAlertDuration"
+                    android:layout_width="120dip"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/labelPeripheralAlertSettings"
+                    android:layout_marginLeft="100dip"
+                    android:max="2"
+                    android:progress="2"
+                    />
+
+            <TextView
+                    android:id="@+id/valuePeripheralAlertDuration"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/labelPeripheralAlertSettings"
+                    android:layout_toRightOf="@id/seekBarPeripheralAlertDuration"
+                    android:gravity="center_vertical"
+                    android:padding="11dip"
+                    android:text="Continuous"
+                    android:textSize="12dip"
+                    android:textStyle="bold"
+                    />
+
+
+            <!-- Phone Alert Settings **************************************************-->
+            <TextView
+                    android:id="@+id/labelPhoneAlertSettings"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/labelPeripheralAlertDuration"
+                    android:layout_marginLeft="20dip"
+                    android:layout_marginTop="10dip"
+                    android:text="@string/phoneAlertSettings"
+                    android:textSize="20dip"
+                    />
+
+            <TextView
+                    android:id="@+id/labelPhoneAlertOnOff"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/labelPhoneAlertSettings"
+                    android:layout_marginLeft="10dip"
+                    android:layout_marginRight="10dip"
+                    android:padding="10dip"
+                    android:text="@string/phoneAlert"
+                    android:textStyle="bold"
+                    />
+
+            <ToggleButton
+                    android:id="@+id/togglePhoneAudioAlertOnOff"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignRight="@id/labelPhoneAlertOnOff"
+                    android:layout_alignTop="@id/labelPhoneAlertOnOff"
+                    android:layout_alignBottom="@id/labelPhoneAlertOnOff"
+                    android:layout_marginRight="10dip"
+                />
+
+            <TextView
+                    android:id="@+id/labelPhoneVibrateOnOff"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/labelPhoneAlertOnOff"
+                    android:layout_marginTop="1dip"
+                    android:layout_marginLeft="10dip"
+                    android:layout_marginRight="10dip"
+                    android:padding="10dip"
+                    android:text="@string/phoneVibrate"
+                    android:textStyle="bold"
+                    />
+
+            <ToggleButton
+                    android:id="@+id/togglePhoneVibrateAlertOnOff"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignRight="@id/labelPhoneVibrateOnOff"
+                    android:layout_alignTop="@id/labelPhoneVibrateOnOff"
+                    android:layout_alignBottom="@id/labelPhoneVibrateOnOff"
+                    android:layout_marginRight="10dip"
+                    />
+
+            <!--Phone Alarm Volume-->
+            <SeekBar
+                    android:id="@+id/seekBarPhoneAlertVolume"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="1dip"
+                    android:layout_marginLeft="10dip"
+                    android:layout_marginRight="10dip"
+                    android:layout_below="@id/labelPhoneVibrateOnOff"
+                    android:max="7"
+                    android:progress="7"
+                    />
+            <TextView
+                    android:id="@+id/labelPhoneAlertVolume"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignLeft="@id/seekBarPhoneAlertVolume"
+                    android:layout_alignTop="@id/seekBarPhoneAlertVolume"
+                    android:text="Alarm Volume"
+                    android:textSize="10dip"
+                    android:layout_marginLeft="15dip"
+                    />
+
+            <!--Phone Alarm Duration-->
+            <SeekBar
+                    android:id="@+id/seekBarPhoneAlertDuration"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="1dip"
+                    android:layout_marginLeft="10dip"
+                    android:layout_marginRight="10dip"
+                    android:layout_below="@id/seekBarPhoneAlertVolume"
+                    android:max="30"
+                    android:progress="3"
+                    />
+            <TextView
+                    android:id="@+id/labelPhoneAlertDuration"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignLeft="@id/seekBarPhoneAlertDuration"
+                    android:layout_alignTop="@id/seekBarPhoneAlertDuration"
+                    android:text="@string/alarmDuration"
+                    android:textSize="10dip"
+                    android:layout_marginLeft="15dip"
+                    />
+            <TextView
+                    android:id="@+id/valuePhoneAlertDuration"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignRight="@id/seekBarPhoneAlertDuration"
+                    android:layout_alignTop="@id/seekBarPhoneAlertDuration"
+                    android:text="@string/seconds_lowercase"
+                    android:textSize="10dip"
+                    android:layout_marginRight="15dip"
+                    />
+
+            <!--Choose Alarm-->
+            <TextView
+                    android:id="@+id/labelPhoneChooseAlarm"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/seekBarPhoneAlertDuration"
+                    android:layout_marginTop="1dip"
+                    android:layout_marginLeft="10dip"
+                    android:layout_marginRight="10dip"
+                    android:padding="10dip"
+                    android:gravity="center"
+                    android:text="@string/chooseAlarm"
+                    android:textStyle="bold"
+                    android:clickable="true"
+                    android:onClick="onClick"
+                    />
+
+            <ImageView
+                    android:id="@+id/chooseAlarmRightChevron"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignTop="@id/labelPhoneChooseAlarm"
+                    android:layout_alignRight="@id/labelPhoneChooseAlarm"
+                    android:layout_marginTop="10dip"
+                    android:src="@drawable/dot_grey"
+                />
+        </RelativeLayout>
+    </ScrollView>
+</LinearLayout>

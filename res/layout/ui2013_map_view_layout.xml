@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+        <!-- Galaxy -->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:id="@+id/topButtonBar"
+            >
+
+        <Button
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Logout"
+                android:id="@+id/button"
+                />
+        <TextView
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Map View"
+                android:textSize="20dip"
+                android:id="@+id/textView"
+                android:gravity="center"
+                />
+        <Button
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/buttonTextLocationList"
+                android:id="@+id/buttonIdLocationList"
+                android:onClick="onClick"
+                />
+    </LinearLayout>
+
+    <fragment android:id="@+id/map"
+              android:layout_width="match_parent"
+              android:layout_height="545dip"
+              class="com.google.android.gms.maps.MapFragment"
+              android:layout_alignParentLeft="true"
+              android:layout_below="@id/topButtonBar"/>
+
+    <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="0dip">
+        <Button
+                android:layout_height="wrap_content"
+                android:layout_width="fill_parent"
+                android:layout_weight="1"
+                android:text="1"
+                />
+        <Button
+                android:layout_height="wrap_content"
+                android:layout_width="fill_parent"
+                android:layout_weight="1"
+                android:text="2"
+                />
+        <Button
+                android:layout_height="wrap_content"
+                android:layout_width="fill_parent"
+                android:layout_weight="1"
+                android:text="3"
+                />
+    </LinearLayout>
+
+
+</RelativeLayout>

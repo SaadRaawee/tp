@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+    <color name="GrayTransparent">#80808080</color>
+    <color name="LightSlateGrayTransparent">#80778899</color>
+    <color name="DimGrayTransparent">#80696969</color>
+    <color name="DarkSlateGrayTransparent">#802F4F4F</color>
+    <color name="RedTransparent">#80FF0000</color>
+</resources>

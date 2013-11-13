@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:id="@+id/discoveredDevice"
+              android:orientation="horizontal"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:paddingLeft="20dip"
+              android:paddingRight="20dip"
+        >
+
+    <ImageView
+            android:id="@+id/imageSignalStrength"
+            android:layout_width="40dip"
+            android:layout_height="40dip"
+            android:layout_weight="1"
+            android:scaleType="fitCenter"
+            />
+
+    <TextView
+            android:id="@+id/itemName"
+            android:layout_width="200dip"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_gravity="center_vertical"
+            android:gravity="left"
+
+            android:text="DeviceName"
+            android:textSize="20dip"
+            android:textColor="@android:color/white"
+            />
+
+    <ImageView
+            android:layout_width="30dip"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_gravity="center"
+            android:src="@drawable/dot_white"
+            />
+</LinearLayout>

@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="40dip"
+              android:layout_marginTop="220dip"
+              android:visibility="gone"
+        >
+    <!-- Test views, not for production use -->
+
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/labelTestStatus"
+            android:text="Peripheral Status"
+            android:textSize="8dip"
+            android:textColor="@android:color/white"
+            />
+
+    <LinearLayout
+            android:id="@+id/testButtons1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_below="@id/labelTestStatus"
+            >
+
+        <Button
+                android:id="@+id/buttonTestRefresh"
+                android:layout_width="50dip"
+                android:layout_height="wrap_content"
+                android:text="Status"
+                android:textSize="8dip"
+                android:onClick="onClick"
+                />
+
+        <Button
+                android:id="@+id/buttonTestConnect"
+                android:layout_width="50dip"
+                android:layout_height="wrap_content"
+                android:text="Conn"
+                android:textSize="8dip"
+                android:onClick="onClick"
+                />
+
+        <Button
+                android:id="@+id/buttonTestDisconnect"
+                android:layout_width="50dip"
+                android:layout_height="wrap_content"
+                android:text="Disconn"
+                android:textSize="8dip"
+                android:onClick="onClick"
+                />
+
+        <Button
+                android:id="@+id/buttonTestBond"
+                android:layout_width="50dip"
+                android:layout_height="wrap_content"
+                android:text="Bond"
+                android:textSize="8dip"
+                android:onClick="onClick"
+                android:visibility="gone"
+                />
+
+        <Button
+                android:id="@+id/buttonTestUnbond"
+                android:layout_width="50dip"
+                android:layout_height="wrap_content"
+                android:text="Unbond"
+                android:textSize="8dip"
+                android:onClick="onClick"
+                android:visibility="gone"
+                />
+
+        <Button
+                android:id="@+id/buttonTestDiscoverCharacteristics"
+                android:layout_width="50dip"
+                android:layout_height="wrap_content"
+                android:text="Discover Char"
+                android:textSize="8dip"
+                android:onClick="onClick"
+                />
+
+        <Button
+                android:id="@+id/buttonTestPhoneAlert"
+                android:layout_width="50dip"
+                android:layout_height="wrap_content"
+                android:text="Alert Phone"
+                android:textSize="8dip"
+                android:onClick="onClick"
+                />
+
+    </LinearLayout>
+
+</LinearLayout>

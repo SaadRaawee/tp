@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/newestbackground"
+        >
+
+    <!--todo should this be a TextEdit view?-->
+    <TextView android:id="@+id/itemName"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_centerHorizontal="true"
+              android:text="itemName"
+              android:textColor="@android:color/white"
+              android:textSize="30dip"
+              android:textStyle="bold"
+            />
+    <android.support.v4.view.ViewPager
+            android:id="@+id/itemPager"
+            android:layout_width="match_parent"
+            android:layout_height="200dip"
+            android:layout_below="@id/itemName"
+            >
+
+            </android.support.v4.view.ViewPager>
+
+    <!-- Left/Right buttons -->
+    <ImageView android:id="@+id/buttonPageLeft"
+               android:layout_width="75dip"
+               android:layout_height="75dip"
+               android:layout_alignParentLeft="true"
+               android:layout_below="@id/itemPager"
+               android:src="@drawable/arrow_left_blue"
+               android:onClick="onClick"
+            />
+    <ImageView android:id="@+id/buttonPageRight"
+               android:layout_width="75dip"
+               android:layout_height="75dip"
+               android:layout_alignParentRight="true"
+               android:layout_below="@id/itemPager"
+               android:src="@drawable/arrow_right_blue"
+               android:onClick="onClick"
+            />
+
+
+
+    <ImageView android:id="@+id/buttonTakePhoto"
+               android:layout_width="75dip"
+               android:layout_height="75dip"
+               android:layout_centerHorizontal="true"
+               android:layout_below="@id/itemPager"
+               android:layout_marginTop="75dip"
+               android:src="@drawable/item_icon_create_with_camera"
+               android:onClick="onClick"
+            />
+    <TextView
+            android:id="@+id/textCameraInstructions"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/buttonTakePhoto"
+            android:text="@string/cameraButtonInstructions"
+            android:textColor="@android:color/white"
+            android:textSize="20dip"
+            android:lines="2"
+            />
+    <Button android:id="@+id/buttonDone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/textCameraInstructions"
+            android:layout_marginTop="75dip"
+            android:text="@string/done"
+            android:textColor="@android:color/black"
+            android:background="@drawable/rectangle_rounded_white"
+            android:onClick="onClick"
+            />
+
+</RelativeLayout>
